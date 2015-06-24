@@ -33,27 +33,41 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         
-        <title>Hello World</title>
+        <!--JQUERY MOBILE-->
+        <link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="jquery.mobile-1.4.5/jquery-1.11.2.min.js"></script>
+        <script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <title>EXAMS</title>
     </head>
     <body>
+ 
         <div class="app">
-            <h1>Apache Cordova</h1>
+        
+            <h1>EXAMS App</h1>
             <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+            	<input id="Login" type="button" value="Login" />
+            	<input id="Cadastre-se" type="button" value="Cadastre-se" />
             </div>
-            <div class="event listening button" onclick="login();">Login with Facebook</div>
-            <div class="event listening button" onclick="showDialog();">Show Dialog with Facebook</div>
-            <div class="event listening button" onclick="apiTest();">Test API with Facebook</div>
-            <div class="event listening button" onclick="getAccessToken();">Get access token with Facebook</div>
-            <div class="event listening button" onclick="getStatus();">Get login status with Facebook</div>
-            <div class="event listening button" onclick="logout();">Logout with Facebook</div>
+	           <!-- <div id="deviceready" class="blink">
+	                <p class="event listening">Connecting to Device</p>
+	                <p class="event received">Device is Ready</p>
+	            </div>
+	            <div class="event listening button" onclick="login();">Login with Facebook</div>
+	            <div class="event listening button" onclick="showDialog();">Show Dialog with Facebook</div>
+	            <div class="event listening button" onclick="apiTest();">Test API with Facebook</div>
+	            <div class="event listening button" onclick="getAccessToken();">Get access token with Facebook</div>
+	            <div class="event listening button" onclick="getStatus();">Get login status with Facebook</div>
+	            <div class="event listening button" onclick="logout();">Logout with Facebook</div>
+	            -->
         </div>
 
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
 
      <script >
+     
+
      	var login = function () {
                 if (!window.cordova) {
                     //var appId = prompt("Enter FB Application ID", "");
@@ -93,6 +107,21 @@
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) });
             }
+
+
+        $('#Login, #Cadastre-se').click(function (){
+	    if (this.id == 'Login') 
+	    {
+	        login();
+	    }
+	    else 
+	    {
+	    	if (this.id == 'Cadastre-se') 
+		    {
+		        alert('Submit 2 clicked');
+		    }
+		}
+	});
      </script>
     </body>
 </html>
